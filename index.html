@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCash Scam Awareness Simulation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef1f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 7px;
+        }
+
+        .header p {
+            font-size: 13px;
+        }
+
+        .simulation {
+            background: #fff3cd;
+            color: #856404;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .message {
+            padding: 25px;
+        }
+
+        .sender {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .sender strong {
+            color: #222;
+        }
+
+        .scam-message {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .scam-message h2 {
+            color: #dc3545;
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .scam-message p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .fake-link {
+            display: block;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .fake-link:hover {
+            background: #0056b3;
+        }
+
+        /* HIDDEN UNTIL THE LINK IS CLICKED */
+
+        .reveal {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .caught {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .caught h2 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .caught p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .red-flags {
+            background: #ffe6e6;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .red-flags h3 {
+            color: #c82333;
+            margin-bottom: 10px;
+        }
+
+        .red-flags ul {
+            padding-left: 20px;
+        }
+
+        .red-flags li {
+            margin-bottom: 7px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .safe {
+            background: #e8f5e9;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .safe h3 {
+            color: #218838;
+            margin-bottom: 8px;
+        }
+
+        .safe p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            background: #f8f9fa;
+            color: #777;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .message {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>GCash Security Alert</h1>
+            <p>Cybersecurity Awareness Simulation</p>
+        </header>
+
+
+        <!-- WARNING -->
+        <div class="simulation">
+            ⚠️ SIMULATED SCAM MESSAGE
+        </div>
+
+
+        <!-- MESSAGE -->
+        <main class="message">
+
+            <div class="sender">
+                <strong>Sender:</strong> GCash-Security
+            </div>
+
+
+            <!-- SCAM CONTENT -->
+            <section class="scam-message">
+
+                <h2>🚨 URGENT ACCOUNT ALERT</h2>
+
+                <p>
+                    We detected unusual activity on your
+                    GCash account.
+                </p>
+
+                <p>
+                    Your account may be temporarily restricted
+                    if you do not complete the verification
+                    process immediately.
+                </p>
+
+                <p>
+                    Please verify your account now to prevent
+                    interruption of your services.
+                </p>
+
+
+                <!-- SAFE SIMULATED LINK -->
+                <a href="#"
+                   class="fake-link"
+                   onclick="revealScam(); return false;">
+
+                    VERIFY MY ACCOUNT
+                </a>
+
+
+                <!-- REVEALED AFTER CLICK -->
+                <div class="reveal" id="reveal">
+
+                    <div class="caught">
+
+                        <h2>⚠️ YOU JUST CLICKED A SCAM SIMULATION!</h2>
+
+                        <p>
+                            Don't worry — this is only an
+                            educational cybersecurity prototype.
+                            No information was collected.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RED FLAGS -->
+                    <div class="red-flags">
+
+                        <h3>🚩 Red Flags You Should Notice</h3>
+
+                        <ul>
+                            <li>
+                                The message creates a sense of
+                                <strong>urgency</strong>.
+                            </li>
+
+                            <li>
+                                It threatens that your account
+                                may be restricted.
+                            </li>
+
+                            <li>
+                                It asks you to click a link
+                                immediately.
+                            </li>
+
+                            <li>
+                                The sender name can be
+                                <strong>spoofed</strong>.
+                            </li>
+
+                            <li>
+                                Legitimate services should not
+                                require you to give sensitive
+                                information through suspicious
+                                links.
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                    <!-- SAFETY -->
+                    <div class="safe">
+
+                        <h3>✅ Remember</h3>
+
+                        <p>
+                            Never provide your
+                            <strong>OTP, MPIN, password,
+                            or other sensitive information</strong>
+                            through suspicious messages or links.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            Educational use only • No data is collected
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        function revealScam() {
+
+            document.getElementById("reveal").style.display = "block";
+
+            document.querySelector(".fake-link").innerText =
+                "SIMULATION COMPLETED";
+
+            document.querySelector(".fake-link").style.background =
+                "#28a745";
+
+        }
+
+    </script>
+
+</body>
+</html>
